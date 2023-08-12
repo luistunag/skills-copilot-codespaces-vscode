@@ -1,15 +1,29 @@
-//Create a web server
+//Create web server
 const express = require('express');
 const app = express();
 const port = 3000;
 
-//Require the body-parser library. Will be used to parse the body of the incoming requests
-const bodyParser = require('body-parser');
-app.use(bodyParser.json());
+//Get the comments
+app.get('/comments', (req, res) => {
+    res.send('Hello World!');
+});
 
-//Require the mongoose library
-const mongoose = require('mongoose');
+//Create a comment
+app.post('/comments', (req, res) => {
+    res.send('Hello World!');
+});
 
-//Connect to the database
-mongoose.connect('mongodb://localhost:27017/comments', { useNewUrlParser: true });
+//Update a comment
+app.put('/comments/:id', (req, res) => {
+    res.send('Hello World!');
+});
+
+//Delete a comment
+app.delete('/comments/:id', (req, res) => {
+    res.send('Hello World!');
+});
+
+app.listen(port, () => {
+    console.log(`Example app listening at http://localhost:${port}`);
+});
 
